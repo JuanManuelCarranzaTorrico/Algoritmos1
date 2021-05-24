@@ -1,0 +1,100 @@
+<html>
+  <head>
+    <title>Trabajo Arboles de nodos</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link
+      href="http://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <figure>
+      <blockquote class="blockquote">
+        <p>Arboles de grafos.</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Proyecto de:     <cite title="Source Title">Juan Manuel Carranza</cite>
+      </figcaption>
+    </figure>
+   
+    
+    <! -- General Container -->
+    <div class="container">
+      
+      <div id="mynetwork"></div>
+
+
+      </div>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="button" onclick="asignacion('max')" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#staticBackdrop">Maximizar</button>
+      <button type="button" onclick="asignacion('min')" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#staticBackdrop">Minimizar</button>
+        
+      </button>
+      
+    </div>
+    <br>
+    <div class="d-grid gap-2">
+      
+      <button type="button" onclick="download()" class="btn btn-success">Guardar</button>
+      
+        
+      </button>
+      
+    </div>
+    
+    <br>
+    
+    
+<!-- <label for="exampleFormControlFile1">Example file input</label>
+<input type="file" class="form-control-file" id="file-input" > -->
+      
+<div>
+  <input class="form-control form-control-lg" id="file-input" type="file">
+</div>
+<br>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id=mensaje>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<!-- <label for="exampleFormControlFile1">Example file input</label>
+<input type="file" class="form-control-file" id="file-input" > -->
+      
+
+    
+    <br>
+
+    <script src="Asignacion.js"></script>
+  </body>
+</html>

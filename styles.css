@@ -1,0 +1,44 @@
+#mynetwork {
+    width: 1080px;
+    height: 720px;
+    
+    border-radius:5px 0px 0px 5px;
+    
+  }
+  
+  body {
+    background-color: whitesmoke;
+  }
+  
+ 
+  #mynetwork {
+    
+    border: 1px solid lightgray;
+    background: #a2550e;
+  }
+  
+  .container {
+    display: flex;
+    padding: 15px;
+    position: relative;
+  }
+  
+  .datacontainer {
+    padding: 10px;
+    flex-grow: 1;
+    width: 200px;
+    border: 1px solid #37e0b6;
+    border-radius:0px 5px 5px 0px;
+  }
+  
+  .line_container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 10px;
+  }
+  
+ 
+  
+ 
+  
