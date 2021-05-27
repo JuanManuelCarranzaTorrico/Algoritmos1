@@ -16,6 +16,9 @@ var data = {
   nodes: nodes,
   edges: edges,
 };
+var men1= {
+ mensaje: mensaje
+};
 
 var options = {
   interaction: {
@@ -41,7 +44,7 @@ var options = {
       editEdge(edgeData, callback);
     },
     // editEdge: true,
-    deleteNode: false,
+    deleteNode: true,
     deleteEdge: false,
   },
   nodes: {
@@ -303,6 +306,9 @@ function asignacion(task){
   let matrixad = Array(nodes.length)
       .fill(0)
       .map(() => Array(nodes.length).fill(0));
+  let matriz1 = Array(nodes.length)
+      .fill(0)
+      .map(() => Array(nodes.length).fill(0));
   
     edges.forEach((edge) => {
       matrixad[parseInt(edge.from)][parseInt(edge.to)] = parseInt(edge.label);
@@ -357,7 +363,16 @@ function asignacion(task){
         for(let i=0;i<info.destinies.length;i++){
           a=consegirlabel(solution[i]);
           b=consegirlabel(info.destinies[i]);
-            response.message = response.message.concat("El nodo ",a," es asignado a ",b,"\n");
+          edges.forEach((edge) => {
+            if(parseInt(edge.from)==solution[i]&&parseInt(edge.to)==info.destinies[i]){
+              matriz1[parseInt(edge.from)][parseInt(edge.to)] = "X";
+            }
+            else{
+              // matriz1[parseInt(edge.from)][parseInt(edge.to)] = "";
+            }
+            
+          });
+            // response.message = response.message.concat("El nodo ",a," es asignado a ",b,"\n");
             let object1 = {
                 type: "node",
                 id: solution[i],
@@ -418,7 +433,16 @@ function asignacion(task){
         for(let i=0;i<info.sources.length;i++){
           a=consegirlabel(info.sources[i]);
           b=consegirlabel(solution[i]);
-            response.message = response.message.concat("El nodo ",a," es asignado a ",b,"\n");
+          edges.forEach((edge) => {
+            if(parseInt(edge.from)==info.sources[i]&&parseInt(edge.to)==solution[i]){
+              matriz1[parseInt(edge.from)][parseInt(edge.to)] = "X";
+            }
+            else{
+              
+            }
+            
+          });
+            // response.message = response.message.concat("El nodo ",a," es asignado a ",b,"\n");
             let object1 = {
                 type: "node",
                 id: info.sources[i],
@@ -442,7 +466,19 @@ function asignacion(task){
     }
     console.log(response.message);
     console.log(response.array);
+    console.log(matriz1);
+    genera_tabla(matriz1);
+    //  alert(mat(matriz1));
+    //  ma=mat(matriz1);
+    // document.getElementById('resp1').innerHTML = ma.ca;
+
+    
+   
+
+
     document.getElementById('mensaje').innerHTML = response.message;
+    
+
     return response;
 }
 function consegirlabel(id1){
@@ -525,6 +561,100 @@ function correctMatrix(matrixad, info){
     }
     return newMatrix;
 }
+function mat(matriz1){
+  nodo1= [];
+  
+ nodes.forEach((node) => {
+   nodo1.push({id:node.id, label:node.label, title:node.title, color:node.color});
+ });
+  var cad='<table class="table table-striped><tr><td></td>';
+  for (i=0;i<nodes.length;i++){
+    cad=cad+'<td>'+nodo1[i]["label"]+'</td>';
+  }
+  cad=cad+'</tr>';
+  for(j=0;j<nodes.length;j++){
+    cad=cad+'<tr><td>'+nodo1[j]["label"]+'</td>';
+
+    for(k=0;k<nodes.length;k++){
+      cad=cad+'<td>'+matriz1[j][k]+'</td>';
+
+    }
+    cad=cad+'</tr>';
+  }
+  cad=cad+'</table>';
+  let ma= {
+    ca: cad
+  };
+  return ma;
+}
+function genera_tabla(matriz1) {
+  nodo1= [];
+  
+ nodes.forEach((node) => {
+   nodo1.push({id:node.id, label:node.label, title:node.title, color:node.color});
+ });
+  // Obtener la referencia del elemento body
+  var body = document.getElementsByTagName("body")[0];
+  let finalTable = document.getElementById("finalTable");
+
+  // Crea un elemento <table> y un elemento <tbody>
+  var tabla   = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+   
+   for (var i = 0; i < 1; i++) {
+    
+    var hilera = document.createElement("tr");
+
+    for (var j = 0; j < 1; j++) {
+      
+      var celda = document.createElement("td");
+      var textoCelda = document.createTextNode(" ");
+      celda.appendChild(textoCelda);
+      hilera.appendChild(celda);
+    }
+    for (var j = 0; j < nodes.length; j++) {
+      
+      var celda = document.createElement("td");
+      var textoCelda = document.createTextNode(nodo1[j]["label"]);
+      celda.appendChild(textoCelda);
+      hilera.appendChild(celda);
+    }
+
+    
+    tblBody.appendChild(hilera);
+   }
+
+  // Crea las celdas
+  for (var i = 0; i < nodes.length; i++) {
+    // Crea las hileras de la tabla
+    var hilera = document.createElement("tr");
+    var celda = document.createElement("td");
+      var textoCelda = document.createTextNode(nodo1[i]["label"]);
+      celda.appendChild(textoCelda);
+      hilera.appendChild(celda);
+
+    for (var j = 0; j < nodes.length; j++) {
+      // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+      // texto sea el contenido de <td>, ubica el elemento <td> al final
+      // de la hilera de la tabla
+      var celda = document.createElement("td");
+      var textoCelda = document.createTextNode(matriz1[i][j]);
+      celda.appendChild(textoCelda);
+      hilera.appendChild(celda);
+    }
+
+    // agrega la hilera al final de la tabla (al final del elemento tblbody)
+    tblBody.appendChild(hilera);
+  }
+
+  // posiciona el <tbody> debajo del elemento <table>
+  tabla.appendChild(tblBody);
+  finalTable.appendChild(tblBody);
+  // appends <table> into <body>
+  body.appendChild(tabla);
+  // modifica el atributo "border" de la tabla y lo fija a "2";
+  tabla.setAttribute("border", "2");
+}
 
 function arnodo(){
   nodo1= [];
@@ -605,3 +735,5 @@ function mostrarContenido(contenido) {
 
 document.getElementById('file-input')
   .addEventListener('change', leerArchivo, false);
+
+
