@@ -18,14 +18,36 @@
   </head>
 
   <body>
-    <figure>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+          <img src="https://1000marcas.net/wp-content/uploads/2019/11/Logo-Batman.png" alt="" width="60" height="30" class="d-inline-block align-text-top">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Matriz Y Jhonson</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index2.html">Asignacion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index3.html">Kramer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="sort.html">Sort</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- <figure>
       <blockquote class="blockquote">
         <p>Arboles de grafos.</p>
       </blockquote>
       <figcaption class="blockquote-footer">
         Proyecto de:     <cite title="Source Title">Juan Manuel Carranza</cite>
       </figcaption>
-    </figure>
+    </figure> -->
    
     
     <! -- General Container -->
@@ -36,6 +58,9 @@
 
       </div>
     </div>
+    <table id="finalTable" class="table table-striped" >
+
+    </table>
     <div class="d-grid gap-2">
       <button type="button" onclick="asignacion('max')" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#staticBackdrop">Maximizar</button>
       <button type="button" onclick="asignacion('min')" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#staticBackdrop">Minimizar</button>
@@ -63,10 +88,10 @@
   <input class="form-control form-control-lg" id="file-input" type="file">
 </div>
 <br>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-  Launch static backdrop modal
-</button>
+<!-- <div id="resp1">
+
+</div> -->
+
 
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -87,6 +112,7 @@
     </div>
   </div>
 </div>
+
     
 <!-- <label for="exampleFormControlFile1">Example file input</label>
 <input type="file" class="form-control-file" id="file-input" > -->

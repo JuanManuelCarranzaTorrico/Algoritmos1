@@ -25,13 +25,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Matriz Y Jhonson</a>
+              <a class="nav-link" href="index.html">Matriz Y Jhonson</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index2.html">Asignacion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index3.html">Kramer</a>
+              <a class="nav-link active" aria-current="page" href="index3.html">Kramer</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="sort.html">Sort</a>
@@ -40,14 +40,7 @@
         </div>
       </div>
     </nav>
-    <!-- <figure>
-      <blockquote class="blockquote">
-        <p>Arboles de grafos.</p>
-      </blockquote>
-      <figcaption class="blockquote-footer">
-        Proyecto de:     <cite title="Source Title">Juan Manuel Carranza</cite>
-      </figcaption>
-    </figure> -->
+    
    
     
     <! -- General Container -->
@@ -58,15 +51,26 @@
 
       </div>
     </div>
-    
+    <table id="finalTable" class="table table-striped" >
+
+    </table>
     <div class="d-grid gap-2">
-      <button type="button" onclick="generarMatriz()" class="btn btn-success">Generar matriz</button>
-      <button type="button" onclick="download()" class="btn btn-success">Guardar</button>
-      <button type="button" onclick="Jhonson()" class="btn btn-success">Jhonson</button>
+      <button type="button" onclick="Kramer('max')" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#staticBackdrop">Maximizar</button>
+      <button type="button" onclick="Kramer('min')" class="btn btn-success"data-bs-toggle="modal" data-bs-target="#staticBackdrop">Minimizar</button>
         
       </button>
       
     </div>
+    <br>
+    <div class="d-grid gap-2">
+      
+      <button type="button" onclick="download()" class="btn btn-success">Guardar</button>
+      
+        
+      </button>
+      
+    </div>
+    
     <br>
     
     
@@ -76,12 +80,40 @@
 <div>
   <input class="form-control form-control-lg" id="file-input" type="file">
 </div>
-<table id="finalTable" class="table table-striped" >
+<br>
+<!-- <div id="resp1">
 
-</table>
+</div> -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id=mensaje>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+<!-- <label for="exampleFormControlFile1">Example file input</label>
+<input type="file" class="form-control-file" id="file-input" > -->
+      
+
     
     <br>
 
-    <script src="nodos.js"></script>
+    <script src="Kramer.js"></script>
   </body>
 </html>
