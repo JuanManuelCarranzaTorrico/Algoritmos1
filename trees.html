@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src=https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js></script>
+  <!-- <link rel="stylesheet" href="trees.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <style>
+    body { margin:0;top:0;right:0;bottom:0;left:0; }
+    svg {width: 1000%;height:1000%}
+    svg {
+      background:#fcfcfc;
+      position: fixed;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <img src="https://1000marcas.net/wp-content/uploads/2019/11/Logo-Batman.png" alt="" width="60" height="30" class="d-inline-block align-text-top">
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Matriz Y Jhonson</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index2.html">Asignacion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index3.html">Kramer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sort.html">Sort</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="trees.html">Trees</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="compet.html">Compet</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+    <div id="mynetwork"><center> 
+      
+      <!-- <button type="button" class="btn btn-outline-dark" onclick="addRandomToTree()">Agregar Nodo Randomico</button> -->
+      
+      <input type="text"  id="num">
+      <button type="button" class="btn btn-outline-dark" onclick="addn()">    Generar</button>
+      <button type="button" class="btn btn-outline-dark" onclick="ran()">Aleatoreo</button>
+
+      <button type="button" class="btn btn-outline-dark" onclick="resultado()">Resultado</button>
+      
+      <button type="button" class="btn btn-outline-dark" onclick="resetTree()">Limpiar</button>
+      <button type="button" id="dwn-btn" class="btn btn-outline-dark" >Guardar</button>
+      <input type="file" id="file-input" />
+
+    
+    
+    
+    </center>
+     
+  <br>
+  
+</div>
+<div class="tabla">
+  <center><textarea style="display:none;"name="rest" id="rest" cols="30" rows="10"></textarea></center>
+</div>
+  <script src="tress.js"></script>
+</body>

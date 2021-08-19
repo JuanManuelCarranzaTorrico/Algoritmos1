@@ -1,5 +1,5 @@
 #mynetwork {
-    width: 1080px;
+    width: 720px;
     height: 720px;
     
     border-radius:5px 0px 0px 5px;
@@ -14,7 +14,7 @@
   #mynetwork {
     
     border: 1px solid lightgray;
-    background: #a2550e;
+    background: #0b790b;
   }
   
   .container {

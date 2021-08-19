@@ -80,12 +80,12 @@ function selectionSort  (arr)  {
     console.log(arr);
     var fecha
     fecha=new Date();
-    var start=fecha.getSeconds();
+    let start = new Date().getTime()
     console.time('loop');
     arr1=selectionSort(arr);
     console.timeEnd('loop');
-    var end=fecha.getSeconds();
-    alert((end-start)+" segundos");
+    let end = new Date().getTime()
+     alert((end-start)+" ms");
     console.log(arr1);
     var cad="";
     arr1.forEach(b =>{
@@ -107,12 +107,12 @@ function selectionSort  (arr)  {
     console.log(arr);
     var fecha
     fecha=new Date();
-    var start=fecha.getSeconds();
+    let start = new Date().getTime()
     console.time('loop');
     arr1=insertionSort(arr);
     console.timeEnd('loop');
-    var end=fecha.getSeconds();
-    alert((end-start)+" segundos");
+    let end = new Date().getTime()
+     alert((end-start)+" ms");
     console.log(arr1);
     var cad="";
     arr1.forEach(b =>{
@@ -134,12 +134,12 @@ function selectionSort  (arr)  {
     console.log(arr);
     var fecha
     fecha=new Date();
-    var start=fecha.getSeconds();
+    let start = new Date().getTime()
     console.time('loop');
     arr1=shellSort(arr);
     console.timeEnd('loop');
-    var end=fecha.getSeconds();
-    alert((end-start)+" segundos");
+    let end = new Date().getTime()
+     alert((end-start)+" ms");
     console.log(arr1);
     var cad="";
     arr1.forEach(b =>{
@@ -158,15 +158,18 @@ function selectionSort  (arr)  {
         x=parseInt(a);
         arr.push(x);
     });
+    let start = new Date().getTime()
     console.log(arr);
     var fecha
     fecha=new Date();
-    var start=fecha.getSeconds();
+    
+  
     console.time('loop');
     arr1=mergeSort(arr);
     console.timeEnd('loop');
-    var end=fecha.getSeconds();
-    alert((end-start)+" segundos");
+
+    let end = new Date().getTime()
+    alert((end-start)+" ms");
     console.log(arr1);
     var cad="";
     arr1.forEach(b =>{
@@ -176,3 +179,73 @@ function selectionSort  (arr)  {
     document.getElementById('res').innerHTML = cad;
   }
 
+  function ran(){
+    var numero_random = parseInt( prompt("Ingrese cantidad de numeros: "));
+    var lim = 1;
+    var sup  = 999;
+    while (lim<0 || numero_random<0 || sup<0){
+        var numero_random = parseInt( prompt("No se ingreso nada vuelva a ingresar: "));  
+    }
+     document.getElementById("cad").value = " ";
+    
+    var imprimir = " ";
+
+    var numeros = []
+    for (var i=0; i<numero_random;i++){
+        var n = Math.floor((Math.random()*(sup -lim))+lim);
+        numeros.push(n);
+    }
+    console.log(numeros);
+    for (var i=0;i<numeros.length; i++){
+        if(i==0){
+            imprimir += numeros[i].toString();
+        }
+        else{
+        imprimir += ", "+numeros[i].toString();
+        }
+    }
+    console.log(imprimir);
+    document.getElementById("cad").value = imprimir;
+}
+
+  function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+// Start file download.
+document.getElementById("dwn-btn").addEventListener("click", function(){
+    // Generate download of hello.txt file with some content
+    var text = document.getElementById("cad").value;
+    var filename = prompt("Nombre del archivo:");
+    
+    download(filename, text);
+}, false);
+function leerArchivo(e) {
+  var archivo = e.target.files[0];
+  if (!archivo) {
+    return;
+  }
+  var lector = new FileReader();
+  lector.onload = function(e) {
+    var contenido = e.target.result;
+    cambiaValores(contenido);
+  };
+  lector.readAsText(archivo);
+}
+function cambiaValores(contenido) {
+  var inputNombre = document.getElementById("cad");
+ inputNombre.value = contenido;
+}
+
+
+document.getElementById('file-input')
+  .addEventListener('change', leerArchivo, false);

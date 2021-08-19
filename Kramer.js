@@ -634,53 +634,7 @@ function genera_tabla(matriz1) {
     // modifica el atributo "border" de la tabla y lo fija a "2";
     tabla.setAttribute("border", "2");
   }
-// let nodes1 = [
-//     {
-//         id: 0,
-//         nodeInputModalName: "Alpha",
-//         nodeInputModalValue: 10,
-//     },
-//     {
-//         id: 1,
-//         nodeInputModalName: "Betha",
-//         nodeInputModalValue: 10,
-//     },
-//     {
-//         id: 2,
-//         nodeInputModalName: "Gamma",
-//         nodeInputModalValue: 7,
-//     },
-//     {
-//         id: 3,
-//         nodeInputModalName: "A",
-//         nodeInputModalValue: 4,
-//     },
-//     {
-//         id: 4,
-//         nodeInputModalName: "B",
-//         nodeInputModalValue: 8,
-//     },
-//     {
-//         id: 5,
-//         nodeInputModalName: "C",
-//         nodeInputModalValue: 10,
-//     },
-//     {
-//         id: 6,
-//         nodeInputModalName: "D",
-//         nodeInputModalValue: 5,
-//     },
 
-// ];
-// let matrizad = [[0,0,0,2,3,6,7],
-//                 [0,0,0,1,2,3,7],
-//                 [0,0,0,7,6,2,3],
-//                 [0,0,0,0,0,0,0],
-//                 [0,0,0,0,0,0,0],
-//                 [0,0,0,0,0,0,0],
-//                 [0,0,0,0,0,0,0]];
-
-//noroeste(matrizad,nodes1,"max");
 
 function Kramer(task){
     nod1=[];
